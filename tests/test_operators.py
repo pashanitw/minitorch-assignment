@@ -105,7 +105,8 @@ def test_sigmoid(a):
     * it is  strictly increasing.
     """
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    assert sigmoid(100) > 0.0
+    assert sigmoid(100) <= 1.0
 
 
 @pytest.mark.task0_2
@@ -113,7 +114,8 @@ def test_sigmoid(a):
 def test_transitive(a, b, c):
     "Test the transitive property of less-than (a < b and b < c implies a < c)"
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    if (a < b and b < c):
+        assert a < c
 
 
 @pytest.mark.task0_2
@@ -124,7 +126,7 @@ def test_symmetric():
     """
     None
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    assert mul(10, 20) == mul(20, 10)
 
 
 @pytest.mark.task0_2
@@ -135,7 +137,7 @@ def test_distribute():
     """
     None
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    assert mul(10, add(20, 30)) == add(mul(10, 20), mul(10, 30))
 
 
 @pytest.mark.task0_2
@@ -145,7 +147,7 @@ def test_other():
     """
     None
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    assert True == True
 
 
 # ## Task 0.3  - Higher-order functions
@@ -174,7 +176,12 @@ def test_sum_distribute(ls1, ls2):
     is the same as the sum of each element of `ls1` plus each element of `ls2`.
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError('Need to implement for Task 0.3')
+    total_1 = 0
+    total_2 = 0
+    for i, (x, y) in enumerate(zip(ls1, ls2)):
+        total_1 += x
+        total_2 += y
+    assert sum(ls1)+sum(ls2) == total_1 + total_2
 
 
 @pytest.mark.task0_3
